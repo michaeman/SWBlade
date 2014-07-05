@@ -30,10 +30,8 @@
 import UIKit
 import SpriteKit
 
-class SWBlade: SKNode
-{
-    init(position:CGPoint, target:SKNode, color:UIColor)
-    {
+class SWBlade: SKNode {
+    init(position:CGPoint, target:SKNode, color:UIColor) {
         super.init()
         
         self.name = "skblade"
@@ -52,8 +50,7 @@ class SWBlade: SKNode
         self.setScale(0.6)
     }
     
-    func enablePhysics(categoryBitMask:UInt32, contactTestBitmask:UInt32, collisionBitmask:UInt32)
-    {
+    func enablePhysics(categoryBitMask:UInt32, contactTestBitmask:UInt32, collisionBitmask:UInt32) {
         self.physicsBody = SKPhysicsBody(circleOfRadius: 16)
         self.physicsBody.categoryBitMask = categoryBitMask
         self.physicsBody.contactTestBitMask = contactTestBitmask
@@ -61,8 +58,7 @@ class SWBlade: SKNode
         self.physicsBody.dynamic = false
     }
     
-    func emitterNodeWithColor(color:UIColor)->SKEmitterNode
-    {
+    func emitterNodeWithColor(color:UIColor)->SKEmitterNode {
         var emitterNode:SKEmitterNode = SKEmitterNode()
         emitterNode.particleTexture = SKTexture(imageNamed: "spark.png")
         emitterNode.particleBirthRate = 3000
